@@ -22,10 +22,10 @@
                 Themes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">TV Shows</a>
-                <a href="" class="dropdown-item">Movies</a>
-                <a href="" class="dropdown-item">Cartoon</a>
-                <a href="" class="dropdown-item">All themes</a>
+                <a href="{% url 'products' %}?category=tv-shows" class="dropdown-item">TV Shows</a>
+                <a href="{% url 'products' %}?category=movies" class="dropdown-item">Movies</a>
+                <a href="{% url 'products' %}?category=cartoons" class="dropdown-item">Cartoons</a>
+                <a href="{% url 'products' %}?category=tv-shows,movies,cartoons" class="dropdown-item">All themes</a>
             </div>
         </li>
 
@@ -34,21 +34,20 @@
                 Music
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">International Bands</a>
-                <a href="" class="dropdown-item">National Bands</a>
-                <a href="" class="dropdown-item">All Bands</a>
+                <a href="{% url 'products' %}?category=international-bands" class="dropdown-item">International Bands</a>
+                <a href="{% url 'products' %}?category=national-bands" class="dropdown-item">National Bands</a>
+                <a href="{% url 'products' %}?category=international-bands,national-bands" class="dropdown-item">All Bands</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
+                More
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="" class="dropdown-item">About us</a>
+                <a href="" class="dropdown-item">Careers</a>
+                <a href="" class="dropdown-item">News</a>
             </div>
         </li>
     </ul>
