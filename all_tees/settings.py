@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_jpg9*pth93)it^$fwc!g@$oi+qh+a)&#9s1&1w*cp#i&3mv3k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jpsantostefano-alltees-8o0zweijybj.ws-us107.gitpod.io']
+ALLOWED_HOSTS = ['8000-jpsantostefano-alltees-8o0zweijybj.ws-us108.gitpod.io']
 
 
 # Application definition
@@ -169,8 +169,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', 'pk_test_51OXAoLAG5VMJODD2HddnY1ooccK8T9ZbOVk1Lp1GIk0aOs9E9E0t1tjZU1xBn3j81ifU1A0D68DCkGoxnbxrncme00EkECoID1')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51OXAoLAG5VMJODD2pyG8btXhiP1eJJG8iUwxaMh2xHYcrO9Fbmi45SSysEyh72rZ7TAqXoHg1Tq2n2qCgBAHpFcI00JzSAk18b')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -2,12 +2,10 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 
-from .forms import Order, OrderForm
-from bag.contexts import bag_contents
-
 from .forms import OrderForm
-from .models import OrderLineItem
+from .models import OrderLineItem, Order
 from products.models import Product
+from bag.contexts import bag_contents
 
 import stripe
 
@@ -64,8 +62,7 @@ def checkout(request):
 
              # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success',
-                                    args=[order.order_number]))
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, ('There was an error with your form. '
                                      'Please double check your information.'))
@@ -92,8 +89,8 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        'stripe_public_key': 'pk_test_51OXAoLAG5VMJODD2HddnY1ooccK8T9ZbOVk1Lp1GIk0aOs9E9E0t1tjZU1xBn3j81ifU1A0D68DCkGoxnbxrncme00EkECoID1',
+        'client_secret': 'test client secret',
     }
 
     return render(request, template, context)
