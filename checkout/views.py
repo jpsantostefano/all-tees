@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
+from django.http import HttpResponse
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
-
+import json
 import stripe
 
 @require_POST
@@ -24,6 +24,7 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
+        print(e)
         messages.error(request, ('Sorry, your payment cannot be '
                                  'processed right now. Please try '
                                  'again later.'))
@@ -50,10 +51,10 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            pid = require.POST.get('client_secret').split('_secret')[0]
+            pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
-            order.save
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -101,6 +102,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
+    
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
