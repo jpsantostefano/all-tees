@@ -10,18 +10,27 @@ body {
     font-family: 'Lato';
 }
 
+/**************/
+
+.card-container{
+    padding: 30px 60px;
+    background-color: #ffff;
+    border-radius: 10px;
+}
+
 /******** HEADER *********/
 
 header {
     background-color: #212529;
     text-align: center;
     color: white;
-    padding: 70px;
-    margin-top: 93px
+    margin-top: 160px;
+    padding: 75px;
 }
 
-header p {
+.subtitle {
     color: #90928E;
+    font-size: 20px;
 }
 
 /* from Bulma */
