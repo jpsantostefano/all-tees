@@ -10,6 +10,20 @@ body {
     font-family: 'Lato';
 }
 
+/******** HEADER *********/
+
+header {
+    background-color: #212529;
+    text-align: center;
+    color: white;
+    padding: 70px;
+    margin-top: 93px
+}
+
+header p {
+    color: #90928E;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
