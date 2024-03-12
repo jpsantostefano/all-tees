@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<header>
+    <div>   
+        <h1>News</h1>
+        <div class="subtitle">
+            <p>Check the last news</p>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="post-detail-section">
+        <h3 class="title">{{ post.title }}</h3>
+        {% if post.image %}
+        <img src="{{ post.image.url }}" width="300px" height="200px">
+        {% endif %}
+        <p><strong>{{post.date}}</strong></p>        
+        {{ post.body }}
+    </div>
+</section>
+
+{% endblock %}

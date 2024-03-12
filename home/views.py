@@ -28,3 +28,6 @@ def news(request):
     posts = Post.objects.all()
     return render(request, 'home/more/news/news.html', {'posts': posts})
 
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    return render(request, 'home/more/news/post_detail.html', {'post': post})

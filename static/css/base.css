@@ -12,11 +12,20 @@ body {
 
 /**************/
 
+.about-us-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51vh;
+}
+
 .card-container{
     padding: 30px 60px;
     background-color: #ffff;
     border-radius: 10px;
 }
+
+
 
 .post-container {
     height: 300px;
@@ -27,6 +36,12 @@ body {
 .news-section{
     height: 42vh;
 }
+
+.post-detail-section{
+    margin: 70px 200px;
+    height: auto;
+}
+
 /******** FOOTER *********/
 
 footer {

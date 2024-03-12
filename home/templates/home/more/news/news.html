@@ -7,7 +7,7 @@
     <div>   
         <h1>News</h1>
         <div class="subtitle">
-            <p>Read the last news</p>
+            <p>Check the last news</p>
         </div>
     </div>
 </header>
@@ -23,7 +23,7 @@
             <img src="{{ post.image.url }}" width="400px" height="300px" alt="Post image">
             {% endif %}
             <div class="mt-4">
-                <a class="btn btn-outline-dark" href="#">Read More</a>
+                <a class="btn btn-outline-dark" href="{% url 'post_detail' post.slug %}">Read More</a>
             </div>
         </div>
         {% endfor %}
