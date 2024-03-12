@@ -18,6 +18,15 @@ body {
     border-radius: 10px;
 }
 
+.post-container {
+    height: 300px;
+    width: 300px;
+    text-align: center;
+}
+
+.news-section{
+    height: 42vh;
+}
 /******** FOOTER *********/
 
 footer {

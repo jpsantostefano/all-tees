@@ -3,12 +3,31 @@
 
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">News</div>
+<header>
+    <div>   
+        <h1>News</h1>
+        <div class="subtitle">
+            <p>Read the last news</p>
         </div>
     </div>
+</header>
 {% endblock %}
 
 {% block content %}
+<section class="container mt-5 mb-5 news-section">
+    <div class="row">
+        {% for post in posts %}
+        <div class="post-container col-md-4">
+            <p><b>{{ post.title }}</b></p>
+            {% if post.image %}
+            <img src="{{ post.image.url }}" width="400px" height="300px" alt="Post image">
+            {% endif %}
+            <div class="mt-4">
+                <a class="btn btn-outline-dark" href="#">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
 {% endblock %}

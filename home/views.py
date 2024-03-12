@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CareersForm
 from django import forms
 from django.contrib import messages
+from .models import Post
 
 # Create your views here.
 def index(request):
@@ -23,4 +24,7 @@ def careers(request):
     return render(request, 'home/more/careers.html', {'form': form})
 
 def news(request):
-    return render(request, 'home/more/news.html')
+    # Shows all the posts
+    posts = Post.objects.all()
+    return render(request, 'home/more/news/news.html', {'posts': posts})
+
