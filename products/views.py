@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, Comment
 from django.db.models.functions import Lower
 
 # Create your views here.
@@ -64,3 +64,4 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
