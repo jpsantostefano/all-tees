@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category, Comment
+from .forms import CommentForm
 from django.db.models.functions import Lower
+from django.contrib.auth.models import User
 
 # Create your views here.
 def all_products(request):
@@ -58,9 +60,24 @@ def all_products(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
+    comments = Comment.objects.filter(product=product)
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.product = product
+            comment.user = request.user
+            comment.save()
+            messages.success(request, "You successfully left a comment!")
+            return redirect('product_detail', product_id=product.id)
+    else:
+        comment_form = CommentForm()
 
     context = {
         'product': product,
+        'comments': comments,
+        'comment_form': comment_form,
     }
 
     return render(request, 'products/product_detail.html', context)

@@ -12,6 +12,11 @@ body {
 
 /**************/
 
+.comments-container{
+    display: flex;
+    justify-content: center;
+}
+
 .about-us-section{
     display: flex;
     align-items: center;
