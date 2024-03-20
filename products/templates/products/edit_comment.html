@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+<header>
+    <div>   
+        <h1>Comments</h1>
+        <div class="subtitle">
+            <p>Edit comment</p>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="d-flex justify-content-center align-items-center">
+    <div class="card-container mt-4 mb-4">
+        <div class="d-flex">
+            <p>Are you sure you want to edit this comment?</p>
+            <form method="POST">
+                {% csrf_token %}  
+                {{ form.text }}
+                <div>
+                    <button class="button" aria-label="submit" type="submit">Save Changes</button>
+                    <button class="button" aria-label="submit"><a href="{% url 'product_detail' product_id %}">Go back</a></button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</section>
+{% endblock %}

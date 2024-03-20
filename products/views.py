@@ -1,10 +1,13 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.http import HttpResponse, HttpResponseForbidden
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category, Comment
 from .forms import CommentForm
 from django.db.models.functions import Lower
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, logout, authenticate
 
 # Create your views here.
 def all_products(request):
@@ -82,3 +85,39 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+@login_required
+def delete_comment(request, comment_id, product_id):
+    comment = get_object_or_404(Comment, id=comment_id, product_id=product_id)
+
+    if request.user != comment.user:
+        messages.error(request, "You don't have permission to delete this comment.")
+        return redirect('product_detail', product_id=product_id)
+
+    if request.method == "POST":
+        comment.delete()
+        messages.success(request, "Your comment was successfully deleted!")
+        return redirect('product_detail', product_id=product_id)
+    else:
+        context = {
+            'comment': comment,
+            'product_id': product_id
+        }
+    return render(request, 'products/delete_comment.html', context)
+
+@login_required
+def edit_comment(request, comment_id, product_id):
+    comment = get_object_or_404(Comment, id=comment_id, product_id=product_id)
+    if comment.user != request.user:
+        return HttpResponseForbidden("You are not allowed"
+                                     " to edit this comment.")
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "You successfully edited your comment!")
+            return redirect('product_detail', product_id=product_id)
+    else:
+        form = CommentForm(instance=comment)
+    return render(request, 'products/edit_comment.html', {'form': form,
+                                                 'comment': comment, 
+                                                 'product_id': comment.product.id})
