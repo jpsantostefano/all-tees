@@ -3,22 +3,19 @@
 {% load bag_tools %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<header class="mb-4">
+    <div>   
+        <h1>Shopping Bag</h1>
     </div>
+</header>
 {% endblock %}
 
 {% block content %}
+<section class="shop-bag">
     <div class="overlay"></div>
     <div class="container mb-2">
         <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Shopping Bag</h2>
-                <hr>
-            </div>
+
         </div>
 
         <div class="row">
@@ -130,6 +127,7 @@
             </div>
         </div>
     </div>
+</section>
 {% endblock %}
 
 {% block postloadjs %}

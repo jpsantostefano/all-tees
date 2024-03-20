@@ -1,24 +1,26 @@
 {% extends "account/base.html" %}
+{% block page_header %}
+<header>
+    <div>   
+        <h1>Sign Up</h1>
+    </div>
+</header>
+{% endblock %}
 
-{% load i18n %}
+{% block content %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
-
-{% block inner_content %}
-<hr>
-<h2 class="logo-font mb-4">{% trans "Sign Up" %}</h2>
-<hr>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="btn btn-outline-black rounded-0" href="{% url 'account_login' %}">Back to Login</a>
-  <button type="submit">{% trans "Sign Up" %}</button>
-</form>
-
+<div class="sign-up">
+  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <div class="mb-3">
+      <a class="btn btn-outline-dark" href="{% url 'account_login' %}">Back to Login</a>
+      <button class="btn btn-outline-dark" type="submit">Sign Up</button>
+    </div>
+    <p>Already have an account? Then please <a href="{{ login_url }}">sign in</a></p>
+  </form>
+</div>
 {% endblock %}

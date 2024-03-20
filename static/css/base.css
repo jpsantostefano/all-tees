@@ -15,6 +15,7 @@ body {
 .comments-container{
     display: flex;
     justify-content: center;
+
 }
 
 .about-us-section{
@@ -87,6 +88,37 @@ footer p {
 
 .footer-right {
     width: 440px;
+}
+
+.sign-out{
+    height: 55vh;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sign-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48vh;
+    margin: 40px 0px;
+    font-size: 20px;
+}
+
+.sign-in{
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.shop-bag{
+    min-height: 53vh;
 }
 
 /******** HEADER *********/
