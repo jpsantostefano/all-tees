@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-_jpg9*pth93)it^$fwc!g@$oi+qh+a)&#9s1&1w*cp#i&3mv3k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jpsantostefano-alltees-8o0zweijybj.ws-eu110.gitpod.io']
+ALLOWED_HOSTS = ['8000-jpsantostefano-alltees-8o0zweijybj.ws-eu110.gitpod.io','all-tees-20b457acc74a.herokuapp.com/', 'localhost']
 
 
 # Application definition
@@ -116,13 +116,17 @@ WSGI_APPLICATION = 'all_tees.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 
