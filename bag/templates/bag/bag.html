@@ -99,13 +99,13 @@
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                    <a href="{% url 'products' %}" class="btn btn-outline-dark btn-lg">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn btn-dark btn-lg">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
@@ -154,5 +154,28 @@
              location.reload();
          });
     })
+
+    $(document).ready(function() {
+    // Increment quantity
+    $('.increment-qty').click(function(e) {
+        e.preventDefault();
+        var qtyInput = $(this).closest('.input-group').find('.qty_input');
+        var currentVal = parseInt(qtyInput.val());
+        if (currentVal < 99) {
+            qtyInput.val(currentVal + 1);
+        }
+    });
+
+    // Decrement quantity
+    $('.decrement-qty').click(function(e) {
+        e.preventDefault();
+        var qtyInput = $(this).closest('.input-group').find('.qty_input');
+        var currentVal = parseInt(qtyInput.val());
+        if (currentVal > 1) {
+            qtyInput.val(currentVal - 1);
+        }
+    });
+});
+
 </script>
 {% endblock %}
