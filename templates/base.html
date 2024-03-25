@@ -30,6 +30,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
+
+
     {% endblock %}
 
     {% block extra_js %}
@@ -179,14 +181,45 @@
             </div>
 
             <!-- Right -->
+            <!--
             <div class="footer-right mt-3 mb-2">
                 <h6 class="text-white">Subscribe to our newsletter and get 15% off your next order.</h6>
-                <form class="d-flex flex-row mb-2 p-1 bg-white" method="post" action="{% url 'home' %}">
+                <form class="d-flex flex-row mb-2 p-1 bg-white" method="post" action="https://gmail.us21.list-manage.com/subscribe/post?u=049fa751c2393b2811b011003&amp;id=98c0a817c9&amp;f_id=007070e1f0" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                     {% csrf_token %}
-                    <input type="email" name="email" class="form-control rounded border-0" placeholder="Your Email">
-                    <button class="btn btn-secondary flex-shrink-0" type="submit">Subscribe</button>
+                    <input type="email" name="EMAIL" class="form-control rounded border-0 required email" id="mce-EMAIL" placeholder="Your Email" required="">
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_049fa751c2393b2811b011003_98c0a817c9" tabindex="-1" value="">
+                    </div>
+                    <button class="btn btn-secondary flex-shrink-0" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                    
                 </form>
             </div>
+            <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+            <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL'; ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+        -->
+
+        <div class="footer-right mt-3 mb-2">
+            <h6 class="text-white">Subscribe to our newsletter and get 15% off your next order.</h6>
+            <form class="d-flex flex-row mb-2 p-1 bg-white" method="post" action="https://gmail.us21.list-manage.com/subscribe/post?u=049fa751c2393b2811b011003&amp;id=98c0a817c9&amp;f_id=007070e1f0" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                <input type="email" name="EMAIL" class="form-control rounded border-0 required email" id="mce-EMAIL" placeholder="Your Email" required="">
+                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_049fa751c2393b2811b011003_98c0a817c9" tabindex="-1" value="">
+                </div>
+                <button class="btn btn-secondary flex-shrink-0" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+            </form>
+            <div id="thank-you-message" style="display: none; color: #FFFFFF; margin-top: 10px;">Thanks for your subscription!</div>
+        </div>
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL'; ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+        <script>
+            document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(event) {
+                var thankYouMessage = document.getElementById('thank-you-message');
+                thankYouMessage.style.display = 'block';
+                setTimeout(function() {
+                    thankYouMessage.style.display = 'none';
+                }, 2000);
+            });
+            </script>  
         </div>
     </footer>
 </body>
