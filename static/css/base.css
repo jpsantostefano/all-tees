@@ -10,10 +10,8 @@ body {
 }
 
 /**************/
-.index{
-    background-image: url('https://all-tees.s3.eu-west-1.amazonaws.com/media/all-tees.webp');
-    background-repeat: no-repeat;
-    background-position: center center;
+.index {
+    background: url('https://all-tees.s3.eu-west-1.amazonaws.com/media/all-tees.webp') no-repeat center center fixed;
     background-size: cover;
 }
 
