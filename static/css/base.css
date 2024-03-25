@@ -4,7 +4,6 @@ html {
 
 body {
     background: #fff no-repeat center center fixed;
-    height: 70vh;
     color: #555;
     font-family: 'Lato';
 }
@@ -13,13 +12,31 @@ body {
 .index {
     background: url('https://all-tees.s3.eu-west-1.amazonaws.com/media/all-tees.webp') no-repeat center center fixed;
     background-size: cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.edit-comment{
+    text-align: center;
+    min-height: 51vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-comment{
+    text-align: center;
+    min-height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .comments-container{
     display: flex;
     justify-content: center;
-
 }
 
 .about-us-section{

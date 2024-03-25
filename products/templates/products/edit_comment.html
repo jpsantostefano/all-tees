@@ -14,19 +14,17 @@
 {% endblock %}
 
 {% block content %}
-<section class="d-flex justify-content-center align-items-center">
-    <div class="card-container mt-4 mb-4">
-        <div class="d-flex">
+<section class="edit-comment">
+        <div>
             <p>Are you sure you want to edit this comment?</p>
             <form method="POST">
                 {% csrf_token %}  
                 {{ form.text }}
                 <div>
-                    <button class="button" aria-label="submit" type="submit">Save Changes</button>
-                    <button class="button" aria-label="submit"><a href="{% url 'product_detail' product_id %}">Go back</a></button>
+                    <button class="btn btn-outline-dark" aria-label="submit" type="submit">Save Changes</button>
+                    <a class="btn btn-outline-dark" href="{% url 'product_detail' product_id %}">Go back</a>
                 </div>
             </form>
         </div>
-    </div>
 </section>
 {% endblock %}
