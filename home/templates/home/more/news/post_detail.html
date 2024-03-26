@@ -17,7 +17,7 @@
     <div class="post-detail-section">
         <h3 class="title">{{ post.title }}</h3>
         {% if post.image %}
-        <img src="{{ post.image.url }}" width="300px" height="200px">
+        <img src="{{ post.image.url }}" width="300px" height="200px" alt="{{ post.slug }}">
         {% endif %}
         <p><strong>{{post.date}}</strong></p>        
         {{ post.body }}

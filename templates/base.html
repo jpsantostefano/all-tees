@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Discover in All Tees the most exclusive selection of t-shirts printed with your favorite movies, series, cartoons and music bands. Unique designs to express your passion with style. Explore Now and find your next favorite t-shirt!">
+    <meta name="description" content="Discover in All Tees the most exclusive selection of t-shirts printed with your favorite movies, 
+    series, cartoons and music bands. Unique designs to express your passion with style. Explore Now and find your next favorite t-shirt!">
+    <meta name="theme-color" content="#FFFFFF"/>
     {% endblock %}
 
     {% block extra_meta %}
@@ -83,8 +85,8 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fa-solid fa-cart-shopping fa-lg"></i></div>
-                                <p class="my-0">
+                                <div class="cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></div>
+                                <p class="my-0 cart">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
@@ -128,11 +130,7 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-        <script type="text/javascript">
-            $('.toast').toast('show');
-        </script>
-    {% endblock %}
+    
     
     <!-- Footer-->
     <footer>
@@ -157,7 +155,7 @@
 
             <!-- Middle -->
             <div class="footer-middle text-center">
-                <h5>Social Media</h5>
+                <p class="social-media">Social Media</p>
                 <div class="mt-2">
                     <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button" target="_blank" aria-label="Facebook">
                         <i class="fab fa-fw fa-facebook-f"></i>
@@ -178,7 +176,7 @@
             </div>
 
         <div class="footer-right mt-3 mb-2">
-            <h6 class="text-white">Subscribe to our newsletter and get 15% off your next order.</h6>
+            <p class="text-white subscribe-text">Subscribe to our newsletter and get 15% off your next order.</p>
             <form class="d-flex flex-row mb-2 p-1 bg-white" method="post" action="https://gmail.us21.list-manage.com/subscribe/post?u=049fa751c2393b2811b011003&amp;id=98c0a817c9&amp;f_id=007070e1f0" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                 <input type="email" name="EMAIL" class="form-control rounded border-0 required email" id="mce-EMAIL" placeholder="Your Email" required="">
                 <div aria-hidden="true" style="position: absolute; left: -5000px;">
@@ -188,6 +186,11 @@
             </form>
             <div id="thank-you-message" style="display: none; color: #FFFFFF; margin-top: 10px;">Thanks for your subscription!</div>
         </div>
+
+        {% block postloadjs %}
+        <script type="text/javascript">
+            $('.toast').toast('show');
+        </script>
         <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
         <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL'; ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
         <script>
@@ -198,7 +201,9 @@
                     thankYouMessage.style.display = 'none';
                 }, 2000);
             });
-            </script>  
+        </script>  
+    {% endblock %}
+        
         </div>
     </footer>
 </body>

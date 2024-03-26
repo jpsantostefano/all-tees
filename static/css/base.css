@@ -9,6 +9,21 @@ body {
 }
 
 /**************/
+
+.cart{
+    color: #0000BD;
+}
+
+.subscribe-text{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.social-media{
+    font-size: 20px;
+    text-align: center;
+}
+
 .index {
     background: url('/media/all-tees.webp') no-repeat center center fixed;
     background-size: cover;
