@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Discover in All Tees the most exclusive selection of t-shirts printed with your favorite movies, series, cartoons and music bands. Unique designs to express your passion with style. Explore Now and find your next favorite t-shirt!">
     {% endblock %}
 
     {% block extra_meta %}
@@ -17,21 +18,17 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        {% endblock %}
+        <link href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
+
+    {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <!-- Stripe -->
-    <script src="https://js.stripe.com/v3/"></script>
-
-
     {% endblock %}
 
     {% block extra_js %}
@@ -44,7 +41,7 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>All</strong> Tees</h2>
+                    <img src="/media/logo.webp" alt="logo" width="80" height="80" class="m-0 p-0">
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -52,7 +49,7 @@
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit" aria-label="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -160,18 +157,18 @@
 
             <!-- Middle -->
             <div class="footer-middle text-center">
-                <h6>Social Media</h6>
+                <h5>Social Media</h5>
                 <div class="mt-2">
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button" target="_blank">
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button" target="_blank" aria-label="Facebook">
                         <i class="fab fa-fw fa-facebook-f"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button" target="_blank">
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button" target="_blank">
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button" target="_blank" aria-label="Twitter">
                         <i class="fab fa-fw fa-twitter"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button" target="_blank">
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button" target="_blank" aria-label="LinkedIn">
                         <i class="fab fa-fw fa-linkedin-in"></i>
                     </a>
                 </div>
@@ -180,24 +177,6 @@
                 </div>
             </div>
 
-            <!-- Right -->
-            <!--
-            <div class="footer-right mt-3 mb-2">
-                <h6 class="text-white">Subscribe to our newsletter and get 15% off your next order.</h6>
-                <form class="d-flex flex-row mb-2 p-1 bg-white" method="post" action="https://gmail.us21.list-manage.com/subscribe/post?u=049fa751c2393b2811b011003&amp;id=98c0a817c9&amp;f_id=007070e1f0" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                    {% csrf_token %}
-                    <input type="email" name="EMAIL" class="form-control rounded border-0 required email" id="mce-EMAIL" placeholder="Your Email" required="">
-                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                        <input type="text" name="b_049fa751c2393b2811b011003_98c0a817c9" tabindex="-1" value="">
-                    </div>
-                    <button class="btn btn-secondary flex-shrink-0" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
-                    
-                </form>
-            </div>
-            <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-            <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL'; ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-        -->
-
         <div class="footer-right mt-3 mb-2">
             <h6 class="text-white">Subscribe to our newsletter and get 15% off your next order.</h6>
             <form class="d-flex flex-row mb-2 p-1 bg-white" method="post" action="https://gmail.us21.list-manage.com/subscribe/post?u=049fa751c2393b2811b011003&amp;id=98c0a817c9&amp;f_id=007070e1f0" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
@@ -205,7 +184,7 @@
                 <div aria-hidden="true" style="position: absolute; left: -5000px;">
                     <input type="text" name="b_049fa751c2393b2811b011003_98c0a817c9" tabindex="-1" value="">
                 </div>
-                <button class="btn btn-secondary flex-shrink-0" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                <button class="btn btn-secondary flex-shrink-0" type="submit" name="subscribe" id="mc-embedded-subscribe" aria-label="Subscribe">Subscribe</button>
             </form>
             <div id="thank-you-message" style="display: none; color: #FFFFFF; margin-top: 10px;">Thanks for your subscription!</div>
         </div>

@@ -72,7 +72,7 @@
                                     <div class="input-group input-group-{{ product.id }}">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
-                                                data-item_id="{{ product.id }}">
+                                                data-item_id="{{ product.id }}" aria-label="minus">
                                                 <span class="icon">
                                                     <i class="fas fa-minus"></i>
                                                 </span>
@@ -83,7 +83,7 @@
                                             data-item_id="{{ product.id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
-                                                data-item_id="{{ product.id }}">
+                                                data-item_id="{{ product.id }}" aria-label="plus">
                                                 <span class="icon">
                                                     <i class="fas fa-plus"></i>
                                                 </span>
@@ -125,10 +125,10 @@
                     {{ comment.text }}
                     {% if user.is_authenticated and comment.user == user %}
                         <!--Edit comment -->
-                        <button><a class="nav-link px-0" href="{% url 'edit_comment' comment_id=comment.id product_id=product.id %}"><i class="fa-regular fa-pen-to-square"></i></a></button>
+                        <button aria-label="edit"><a class="nav-link px-0" href="{% url 'edit_comment' comment_id=comment.id product_id=product.id %}"><i class="fa-regular fa-pen-to-square"></i></a></button>
 
                         <!--Delete comment -->
-                        <button><a class="nav-link px-0" href="{% url 'delete_comment' comment_id=comment.id product_id=product.id %}"><i class="fa-solid fa-trash"></i></a></button>
+                        <button aria-label="delete"><a class="nav-link px-0" href="{% url 'delete_comment' comment_id=comment.id product_id=product.id %}"><i class="fa-solid fa-trash"></i></a></button>
                         {% endif %}
 
                         {% empty %}
@@ -148,7 +148,7 @@
                         {% csrf_token %}
                         {{ comment_form.text }}                  
                             <div>
-                                <button class="btn btn-outline-dark">Submit</button>
+                                <button class="btn btn-outline-dark" aria-label="submit">Submit</button>
                             </div>
                         {% else %}
                         <p><a href="{% url 'account_login' %}">LOGIN</a>  or <a href="{% url 'account_signup' %}">REGISTER</a>  to leave a comment!</p>

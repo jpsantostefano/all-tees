@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
+{% block extra_js %}
+<!-- Stripe -->
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
 {% block page_header %}
 <header>
     <div>   
@@ -110,7 +115,7 @@
 							</span>
 							<span class="font-weight-bold">Adjust Bag</span>
 						</a>
-						<button id="submit-button" class="btn btn-dark">
+						<button id="submit-button" class="btn btn-dark" aria-label="submit">
 							<span class="font-weight-bold">Complete Order</span>
 							<span class="icon">
 								<i class="fas fa-lock"></i>

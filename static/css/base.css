@@ -10,7 +10,7 @@ body {
 
 /**************/
 .index {
-    background: url('https://all-tees.s3.eu-west-1.amazonaws.com/media/all-tees.webp') no-repeat center center fixed;
+    background: url('/media/all-tees.webp') no-repeat center center fixed;
     background-size: cover;
     height: 70vh;
     display: flex;
@@ -148,7 +148,7 @@ header {
     background-color: #212529;
     text-align: center;
     color: white;
-    margin-top: 160px;
+    margin-top: 190px;
     padding: 55px;
 }
 
@@ -304,7 +304,7 @@ input[name='q']::placeholder {
 }
 
 .arrow-info {
-    border-bottom-color: #17a2b8 !important;
+    border-bottom-color: #021342 !important;
 }
 
 .arrow-light {
@@ -381,7 +381,7 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #021342; /* text-info */
 }
 
 /* Product Form */
