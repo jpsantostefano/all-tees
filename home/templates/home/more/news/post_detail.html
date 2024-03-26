@@ -21,7 +21,12 @@
         {% endif %}
         <p><strong>{{post.date}}</strong></p>        
         {{ post.body }}
+        <div class="mt-4">
+            <a href="{% url 'home' %}" class="btn btn-outline-dark">Home</a>
+            <a href="{% url 'news' %}" class="btn btn-outline-dark">Go Back</a>
+        </div>
     </div>
+    
 </section>
 
 {% endblock %}
