@@ -9,6 +9,17 @@ body {
 }
 
 /**************/
+.width-25{
+    width: 25%;
+}
+
+.keep-shop-btn{
+    margin-top: 3rem;
+}
+
+.product-detail-price{
+    text-align: left;
+}
 
 .cart{
     color: #0000BD;
@@ -502,7 +513,7 @@ input[name='q']::placeholder {
 
     }
 
-    .d-flex {
+    .mobile-footer {
         flex-direction: column;
     }
 
@@ -537,6 +548,9 @@ input[name='q']::placeholder {
         text-align: center;
     }
 
+    .section{
+        width: 320px;
+    }
 /********** HEADER MOBILE***************/
     nav{
         font-size: smaller;
@@ -552,6 +566,97 @@ input[name='q']::placeholder {
        padding-right: 30px;
     }
     
-    .shop-now
+    .index{
+        height: 95vh;
+    }
+
+    .shop-now-button{
+        min-width: 0px;
+    }
+
+    header{
+        margin-top:80px;
+        padding-top: 30px;
+        padding-bottom: 15px;
+    
+    }
+
+    header h1{
+        font-size: 30px;
+    }
+
+    .card-img-top{
+        width: 250px;
+        height: 250px;
+    }
+
+    .image-container{
+        text-align: center;
+        padding-top: 50px;
+
+    }
+
+    .product-details-container{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .product-detail-price{
+        text-align: center;
+    }
+
+    .size-qty-mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .form-control{
+        text-align: center;
+    }
+
+    .keep-shop-btn{
+        margin-top: 5px;
+    }
+
+    .table-responsive .table th, .table-responsive .table td {
+        display: block;
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    .table-responsive .table thead {
+        display: none; 
+    }
+    
+    .table-responsive .table tr {
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #dee2e6; 
+    }
+    
+    .table-responsive .table td:before {
+        content: attr(data-label); 
+        font-weight: bold; 
+        display: block; 
+    }
+
+    .table-responsive {
+        text-align: center;
+    }
+    
+    .width-25{
+        width: 0;
+        text-align: center;
+    }
+
+    .sign-in{
+        font-size: smaller;
+        width: 280px;
+        margin-left: 20px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
 }
 
