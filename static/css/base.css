@@ -489,3 +489,52 @@ input[name='q']::placeholder {
         padding: .25rem .5rem !important;
     }
 }
+
+
+/***/
+@media (max-width: 320px) {
+    footer{
+        height: auto;
+        padding: 15px 10px;
+    }
+
+    footer p{
+
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+   
+    .footer-left, .footer-middle, .footer-right {
+        text-align: center;
+    }
+
+    .footer-middle {
+        order: 3; 
+    }
+
+    
+
+    .footer-right {
+        order: 2;
+        max-width: 280px;
+
+    }
+
+    .footer-left{
+        display: flex;
+        align-items: center;
+    }
+
+    .copyright{
+        display: flex;
+        align-items: center;
+    }
+
+    .subscribe-text{
+        text-align: center;
+    }
+    
+}

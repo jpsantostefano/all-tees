@@ -134,7 +134,6 @@
     
     <!-- Footer-->
     <footer>
-    <!-- Top Footer -->
         <div class="d-flex justify-content-around align-items-center pt-2">
             <!-- Left -->
             <div class="footer-left">
@@ -170,11 +169,11 @@
                         <i class="fab fa-fw fa-linkedin-in"></i>
                     </a>
                 </div>
-                <div class="d-flex justify-content-center mt-3">
+                <div class="d-flex justify-content-center mt-3 copyright">
                     <p class="m-0 text-white text-opacity-75">© 2024 copyright by Juan Santostefano</p>
                 </div>
             </div>
-
+            <!-- Right -->
         <div class="footer-right mt-3 mb-2">
             <p class="text-white subscribe-text">Subscribe to our newsletter and get 15% off your next order.</p>
             <form class="d-flex flex-row mb-2 p-1 bg-white" method="post" action="https://gmail.us21.list-manage.com/subscribe/post?u=049fa751c2393b2811b011003&amp;id=98c0a817c9&amp;f_id=007070e1f0" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
@@ -184,10 +183,12 @@
                 </div>
                 <button class="btn btn-secondary flex-shrink-0" type="submit" name="subscribe" id="mc-embedded-subscribe" aria-label="Subscribe">Subscribe</button>
             </form>
-            <div id="thank-you-message" style="display: none; color: #FFFFFF; margin-top: 10px;">Thanks for your subscription!</div>
+                <div id="thank-you-message" style="display: none; color: #FFFFFF; margin-top: 10px;">Thanks for your subscription!</div>
+            </div>
         </div>
+    </footer>
 
-        {% block postloadjs %}
+    {% block postloadjs %}
         <script type="text/javascript">
             $('.toast').toast('show');
         </script>
@@ -203,8 +204,5 @@
             });
         </script>  
     {% endblock %}
-        
-        </div>
-    </footer>
 </body>
 </html>
