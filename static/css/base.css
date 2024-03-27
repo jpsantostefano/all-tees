@@ -651,12 +651,17 @@ input[name='q']::placeholder {
         text-align: center;
     }
 
-    .sign-in{
+    .sign-in, .sign-up{
         font-size: smaller;
         width: 280px;
         margin-left: 20px;
-        margin-top: 25px;
-        margin-bottom: 10px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .sign-up{
+        margin-top: 120px;
+        margin-bottom: 100px;
     }
 }
 
