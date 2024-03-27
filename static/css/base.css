@@ -491,7 +491,7 @@ input[name='q']::placeholder {
 }
 
 
-/***/
+/********** FOOTER MOBILE***************/
 @media (max-width: 320px) {
     footer{
         height: auto;
@@ -536,5 +536,22 @@ input[name='q']::placeholder {
     .subscribe-text{
         text-align: center;
     }
+
+/********** HEADER MOBILE***************/
+    nav{
+        font-size: smaller;
+        margin-right: 40px;
+    }
+
+    .header-container{
+        height: 20px;
+        padding-top: 0px;
+    }
+
+    #delivery-banner{
+       padding-right: 30px;
+    }
     
+    .shop-now
 }
+
