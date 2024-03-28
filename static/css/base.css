@@ -515,10 +515,6 @@ input[name='q']::placeholder {
         padding: 15px 10px;
     }
 
-    footer p{
-
-    }
-
     .mobile-footer {
         flex-direction: column;
     }
@@ -664,6 +660,20 @@ input[name='q']::placeholder {
     .sign-up{
         margin-top: 120px;
         margin-bottom: 100px;
+    }
+
+    .comments-container{
+        padding: 0 50px;
+        font-size: smaller;
+    }
+
+    .edit-comment{
+        padding: 25px 30px;
+    }
+
+    textarea{
+        width: 200px;
+        height: 100px;
     }
 }
 
