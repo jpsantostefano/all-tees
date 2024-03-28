@@ -110,9 +110,8 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
@@ -182,28 +181,28 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# if 'USE_AWS' in os.environ:
-#     # Cache control
-#     AWS_S3_OBJECT_PARAMETERS = {
-#         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-#         'CacheControl': 'max-age=94608000',
-#     }
+if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
 
-#     AWS_STORAGE_BUCKET_NAME = 'all-tees'
-#     AWS_S3_REGION_NAME = 'eu-west-1'
-#     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_STORAGE_BUCKET_NAME = 'all-tees'
+    AWS_S3_REGION_NAME = 'eu-west-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-#     # Static and media files
-#     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-#     STATICFILES_LOCATION = 'static'
-#     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-#     MEDIAFILES_LOCATION = 'media'
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
 
-#     # Override static and media URLs in production
-#     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-#     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 
 
@@ -213,7 +212,18 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', 'pk_test_51OXAoLAG5VMJODD2HddnY1ooccK8T9ZbOVk1Lp1GIk0aOs9E9E0t1tjZU1xBn3j81ifU1A0D68DCkGoxnbxrncme00EkECoID1')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51OXAoLAG5VMJODD2pyG8btXhiP1eJJG8iUwxaMh2xHYcrO9Fbmi45SSysEyh72rZ7TAqXoHg1Tq2n2qCgBAHpFcI00JzSAk18b')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET','whsec_tA7CYqUPTZb6ZcmetRF0QHSzQnQxx8UI')
-DEFAULT_FROM_EMAIL = 'all-tees@gmail.com'
+
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'jpsantostefano@gmail.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'stmp.gmail.com'
+    EMAIL_HOST_USER = 'jpsantostefano@gmail.com'
+    EMAIL_HOST_PASSWORD = 'reiojwjokbieppli'
+    DEFAULT_FROM_EMAIL = 'jpsantostefano@gmail.com'
 
 
 # Default primary key field type
@@ -221,4 +231,4 @@ DEFAULT_FROM_EMAIL = 'all-tees@gmail.com'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DISABLE_COLLECTSTATIC = 0
+DISABLE_COLLECTSTATIC = 1

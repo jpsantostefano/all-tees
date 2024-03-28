@@ -63,6 +63,7 @@ body {
 .comments-container{
     display: flex;
     justify-content: center;
+    font-size: large;
 }
 
 .about-us-section{
